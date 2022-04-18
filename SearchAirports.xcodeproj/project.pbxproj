@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E4C40E4280CE61700686518 /* SearchCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */; };
+		5E4C40E8280CE6AA00686518 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40E7280CE6AA00686518 /* RxCocoa */; };
+		5E4C40EA280CE6AA00686518 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40E9280CE6AA00686518 /* RxRelay */; };
+		5E4C40EC280CE6AA00686518 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40EB280CE6AA00686518 /* RxSwift */; };
+		5E4C40EF280CE6DE00686518 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40EE280CE6DE00686518 /* RxDataSources */; };
 		5EDF3E4E280CDCA500B35A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */; };
 		5EDF3E50280CDCA500B35A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */; };
-		5EDF3E52280CDCA500B35A5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E51280CDCA500B35A5B /* ViewController.swift */; };
+		5EDF3E52280CDCA500B35A5B /* SearchCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E51280CDCA500B35A5B /* SearchCityVC.swift */; };
 		5EDF3E55280CDCA500B35A5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDF3E53280CDCA500B35A5B /* Main.storyboard */; };
 		5EDF3E57280CDCA700B35A5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EDF3E56280CDCA700B35A5B /* Assets.xcassets */; };
 		5EDF3E5A280CDCA700B35A5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EDF3E58280CDCA700B35A5B /* LaunchScreen.storyboard */; };
@@ -17,10 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewModel.swift; sourceTree = "<group>"; };
 		5EDF3E4A280CDCA500B35A5B /* SearchAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5EDF3E51280CDCA500B35A5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5EDF3E51280CDCA500B35A5B /* SearchCityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityVC.swift; sourceTree = "<group>"; };
 		5EDF3E54280CDCA500B35A5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5EDF3E56280CDCA700B35A5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EDF3E59280CDCA700B35A5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,12 +39,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E4C40EC280CE6AA00686518 /* RxSwift in Frameworks */,
+				5E4C40EF280CE6DE00686518 /* RxDataSources in Frameworks */,
+				5E4C40EA280CE6AA00686518 /* RxRelay in Frameworks */,
+				5E4C40E8280CE6AA00686518 /* RxCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E4C40E5280CE62600686518 /* SearchCity */ = {
+			isa = PBXGroup;
+			children = (
+				5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */,
+				5EDF3E51280CDCA500B35A5B /* SearchCityVC.swift */,
+			);
+			path = SearchCity;
+			sourceTree = "<group>";
+		};
 		5EDF3E41280CDCA500B35A5B = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +78,9 @@
 		5EDF3E4C280CDCA500B35A5B /* SearchAirports */ = {
 			isa = PBXGroup;
 			children = (
+				5E4C40E5280CE62600686518 /* SearchCity */,
 				5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */,
 				5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */,
-				5EDF3E51280CDCA500B35A5B /* ViewController.swift */,
 				5EDF3E53280CDCA500B35A5B /* Main.storyboard */,
 				5EDF3E56280CDCA700B35A5B /* Assets.xcassets */,
 				5EDF3E58280CDCA700B35A5B /* LaunchScreen.storyboard */,
@@ -86,6 +105,12 @@
 			dependencies = (
 			);
 			name = SearchAirports;
+			packageProductDependencies = (
+				5E4C40E7280CE6AA00686518 /* RxCocoa */,
+				5E4C40E9280CE6AA00686518 /* RxRelay */,
+				5E4C40EB280CE6AA00686518 /* RxSwift */,
+				5E4C40EE280CE6DE00686518 /* RxDataSources */,
+			);
 			productName = SearchAirports;
 			productReference = 5EDF3E4A280CDCA500B35A5B /* SearchAirports.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +139,10 @@
 				Base,
 			);
 			mainGroup = 5EDF3E41280CDCA500B35A5B;
+			packageReferences = (
+				5E4C40E6280CE6AA00686518 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				5E4C40ED280CE6DE00686518 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+			);
 			productRefGroup = 5EDF3E4B280CDCA500B35A5B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,9 +171,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5EDF3E52280CDCA500B35A5B /* ViewController.swift in Sources */,
+				5EDF3E52280CDCA500B35A5B /* SearchCityVC.swift in Sources */,
 				5EDF3E4E280CDCA500B35A5B /* AppDelegate.swift in Sources */,
 				5EDF3E50280CDCA500B35A5B /* SceneDelegate.swift in Sources */,
+				5E4C40E4280CE61700686518 /* SearchCityViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +392,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5E4C40E6280CE6AA00686518 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		5E4C40ED280CE6DE00686518 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5E4C40E7280CE6AA00686518 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E4C40E6280CE6AA00686518 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5E4C40E9280CE6AA00686518 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E4C40E6280CE6AA00686518 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		5E4C40EB280CE6AA00686518 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E4C40E6280CE6AA00686518 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		5E4C40EE280CE6DE00686518 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E4C40ED280CE6DE00686518 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5EDF3E42280CDCA500B35A5B /* Project object */;
 }
