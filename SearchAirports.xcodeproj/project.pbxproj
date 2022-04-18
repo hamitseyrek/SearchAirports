@@ -16,6 +16,7 @@
 		5E719CAE280E156C00FD0BB8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CAD280E156C00FD0BB8 /* Coordinator.swift */; };
 		5E719CB0280E196500FD0BB8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CAF280E196500FD0BB8 /* BaseCoordinator.swift */; };
 		5E719CB3280E1B6400FD0BB8 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CB2280E1B6400FD0BB8 /* Storyboardable.swift */; };
+		5E719CB5280E24E200FD0BB8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CB4280E24E200FD0BB8 /* AppCoordinator.swift */; };
 		5EDF3E4E280CDCA500B35A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */; };
 		5EDF3E50280CDCA500B35A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */; };
 		5EDF3E52280CDCA500B35A5B /* SearchCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E51280CDCA500B35A5B /* SearchCityVC.swift */; };
@@ -31,6 +32,7 @@
 		5E719CAD280E156C00FD0BB8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5E719CAF280E196500FD0BB8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5E719CB2280E1B6400FD0BB8 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
+		5E719CB4280E24E200FD0BB8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		5EDF3E4A280CDCA500B35A5B /* SearchAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				5E719CA8280E13AF00FD0BB8 /* SearchCityCoordinator.swift */,
 				5E719CAD280E156C00FD0BB8 /* Coordinator.swift */,
 				5E719CAF280E196500FD0BB8 /* BaseCoordinator.swift */,
+				5E719CB4280E24E200FD0BB8 /* AppCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				5E719CA9280E13AF00FD0BB8 /* SearchCityCoordinator.swift in Sources */,
 				5E719CB3280E1B6400FD0BB8 /* Storyboardable.swift in Sources */,
 				5E719CB0280E196500FD0BB8 /* BaseCoordinator.swift in Sources */,
+				5E719CB5280E24E200FD0BB8 /* AppCoordinator.swift in Sources */,
 				5EDF3E50280CDCA500B35A5B /* SceneDelegate.swift in Sources */,
 				5E4C40E4280CE61700686518 /* SearchCityViewModel.swift in Sources */,
 			);

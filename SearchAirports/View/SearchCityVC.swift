@@ -20,6 +20,7 @@ class SearchCityVC: UIViewController, Storyboardable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Airports"
         // Do any additional setup after loading the view.
         viewModel = viewModelBuilder((searchText: searchTextField.rx.text.orEmpty.asDriver(), ()))
     }
