@@ -13,8 +13,6 @@ protocol ApiServiceProtocol {
 }
 
 class ApiService {
-    
-    //private lazy var httpRequest: HttpRequest
     static let shared: ApiService = ApiService()
 }
 
@@ -29,10 +27,6 @@ extension ApiService: ApiServiceProtocol {
                     single(.failure(NetworkError.error(message: response.error?.localizedDescription ?? "Something went wrong")))
                     return
                 }
-//                print(ApiRouter.AirPortsPath.withBaseUrl())
-//                response.value.map({ result in
-//                    print(result)
-//                })
                 
                 single(.success(data))
             }
