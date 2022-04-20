@@ -17,6 +17,11 @@
 		5E719CB0280E196500FD0BB8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CAF280E196500FD0BB8 /* BaseCoordinator.swift */; };
 		5E719CB3280E1B6400FD0BB8 /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CB2280E1B6400FD0BB8 /* Storyboardable.swift */; };
 		5E719CB5280E24E200FD0BB8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CB4280E24E200FD0BB8 /* AppCoordinator.swift */; };
+		5E719CB8280F6F8300FD0BB8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5E719CB7280F6F8300FD0BB8 /* Alamofire */; };
+		5E719CBB280F71E400FD0BB8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CBA280F71E400FD0BB8 /* ApiService.swift */; };
+		5E719CBE280F73E000FD0BB8 /* AirPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CBD280F73E000FD0BB8 /* AirPort.swift */; };
+		5E719CC0280F863E00FD0BB8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CBF280F863E00FD0BB8 /* NetworkError.swift */; };
+		5E719CC2280F883200FD0BB8 /* ApiRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CC1280F883200FD0BB8 /* ApiRouter.swift */; };
 		5EDF3E4E280CDCA500B35A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */; };
 		5EDF3E50280CDCA500B35A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */; };
 		5EDF3E52280CDCA500B35A5B /* SearchCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E51280CDCA500B35A5B /* SearchCityVC.swift */; };
@@ -33,6 +38,10 @@
 		5E719CAF280E196500FD0BB8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		5E719CB2280E1B6400FD0BB8 /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		5E719CB4280E24E200FD0BB8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		5E719CBA280F71E400FD0BB8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		5E719CBD280F73E000FD0BB8 /* AirPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirPort.swift; sourceTree = "<group>"; };
+		5E719CBF280F863E00FD0BB8 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		5E719CC1280F883200FD0BB8 /* ApiRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouter.swift; sourceTree = "<group>"; };
 		5EDF3E4A280CDCA500B35A5B /* SearchAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E719CB8280F6F8300FD0BB8 /* Alamofire in Frameworks */,
 				5E4C40EC280CE6AA00686518 /* RxSwift in Frameworks */,
 				5E4C40EF280CE6DE00686518 /* RxDataSources in Frameworks */,
 				5E4C40EA280CE6AA00686518 /* RxRelay in Frameworks */,
@@ -94,6 +104,24 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		5E719CB9280F71CB00FD0BB8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5E719CBA280F71E400FD0BB8 /* ApiService.swift */,
+				5E719CBF280F863E00FD0BB8 /* NetworkError.swift */,
+				5E719CC1280F883200FD0BB8 /* ApiRouter.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5E719CBC280F73D000FD0BB8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5E719CBD280F73E000FD0BB8 /* AirPort.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5EDF3E41280CDCA500B35A5B = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +142,8 @@
 		5EDF3E4C280CDCA500B35A5B /* SearchAirports */ = {
 			isa = PBXGroup;
 			children = (
+				5E719CBC280F73D000FD0BB8 /* Model */,
+				5E719CB9280F71CB00FD0BB8 /* Service */,
 				5E719CB1280E1B4E00FD0BB8 /* Shared */,
 				5E719CAC280E155400FD0BB8 /* View */,
 				5E719CAB280E154B00FD0BB8 /* ViewModel */,
@@ -149,6 +179,7 @@
 				5E4C40E9280CE6AA00686518 /* RxRelay */,
 				5E4C40EB280CE6AA00686518 /* RxSwift */,
 				5E4C40EE280CE6DE00686518 /* RxDataSources */,
+				5E719CB7280F6F8300FD0BB8 /* Alamofire */,
 			);
 			productName = SearchAirports;
 			productReference = 5EDF3E4A280CDCA500B35A5B /* SearchAirports.app */;
@@ -181,6 +212,7 @@
 			packageReferences = (
 				5E4C40E6280CE6AA00686518 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				5E4C40ED280CE6DE00686518 /* XCRemoteSwiftPackageReference "RxDataSources" */,
+				5E719CB6280F6F8300FD0BB8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 5EDF3E4B280CDCA500B35A5B /* Products */;
 			projectDirPath = "";
@@ -215,8 +247,12 @@
 				5E719CAE280E156C00FD0BB8 /* Coordinator.swift in Sources */,
 				5E719CA9280E13AF00FD0BB8 /* SearchCityCoordinator.swift in Sources */,
 				5E719CB3280E1B6400FD0BB8 /* Storyboardable.swift in Sources */,
+				5E719CBE280F73E000FD0BB8 /* AirPort.swift in Sources */,
 				5E719CB0280E196500FD0BB8 /* BaseCoordinator.swift in Sources */,
+				5E719CC2280F883200FD0BB8 /* ApiRouter.swift in Sources */,
+				5E719CBB280F71E400FD0BB8 /* ApiService.swift in Sources */,
 				5E719CB5280E24E200FD0BB8 /* AppCoordinator.swift in Sources */,
+				5E719CC0280F863E00FD0BB8 /* NetworkError.swift in Sources */,
 				5EDF3E50280CDCA500B35A5B /* SceneDelegate.swift in Sources */,
 				5E4C40E4280CE61700686518 /* SearchCityViewModel.swift in Sources */,
 			);
@@ -452,6 +488,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5E719CB6280F6F8300FD0BB8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -474,6 +518,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E4C40ED280CE6DE00686518 /* XCRemoteSwiftPackageReference "RxDataSources" */;
 			productName = RxDataSources;
+		};
+		5E719CB7280F6F8300FD0BB8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E719CB6280F6F8300FD0BB8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
