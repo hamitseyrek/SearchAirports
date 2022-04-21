@@ -6,12 +6,28 @@
 //
 
 import Foundation
+import RxDataSources
+import RxSwift
+import RxCocoa
+
+typealias airportItemsSection = SectionModel<Int, AirportViewModelProtocol>
 
 protocol AirportsViewModelProtocol {
     
-    typealias Output = ()
+    typealias Output = (
+        title: Driver<String>,
+        airports: Driver<[airportItemsSection]>
+    )
+    
     typealias Input = ()
     
+    typealias Dependencies = (
+        title: String,
+        models: Set<Airport>
+    )
+    
+    typealias ViewModelBuilder = (AirportsViewModelProtocol.Input) -> AirportsViewModelProtocol
+
     var output: AirportsViewModelProtocol.Output { get }
     var input: AirportsViewModelProtocol.Input { get }
 }
@@ -20,6 +36,22 @@ struct AirportsViewModel: AirportsViewModelProtocol {
     
     var output: AirportsViewModelProtocol.Output
     var input: AirportsViewModelProtocol.Input
+    
+    init(input: AirportsViewModelProtocol.Input, dependencies: AirportsViewModelProtocol.Dependencies) {
+        self.input = input
+        self.output = AirportsViewModel.output(dependencies: dependencies)
+    }
+}
+
+extension AirportsViewModel {
+    
+    static func output(dependencies: AirportsViewModelProtocol.Dependencies) -> AirportsViewModelProtocol.Output {
+        
+        return (
+            title: Driver.just(dependencies.title),
+            airports: Driver.empty()
+        )
+    }
 }
 
 
