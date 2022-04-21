@@ -11,10 +11,10 @@ import RxSwift
 
 protocol SearchCityViewModelProtocol {
     
-    typealias Input = (
-        searchText: Driver<String>, ()
-    )
-    typealias Output = ()
+    typealias Input = ( searchText: Driver<String>, () )
+    
+    typealias Output = ( cities: Driver<[CityItemsSection]>, () )
+    
     typealias ViewModelBuilder = (SearchCityViewModelProtocol.Input) -> SearchCityViewModelProtocol
     
     var input: SearchCityViewModelProtocol.Input { get }
@@ -34,7 +34,7 @@ class SearchCityViewModel: SearchCityViewModelProtocol {
     
     init(input: SearchCityViewModelProtocol.Input, airportsService: ApiServiceProtocol) {
         self.input = input
-        self.output = SearchCityViewModel.output(input: self.input, state: self.state, bag: self.bagDispose)
+        self.output = SearchCityViewModel.output(input: self.input, state: self.state)
         self.airportsService = airportsService
         self.process()
     }
@@ -43,7 +43,7 @@ class SearchCityViewModel: SearchCityViewModelProtocol {
 
 private extension SearchCityViewModel {
     
-    static func output(input: SearchCityViewModelProtocol.Input, state: State, bag: DisposeBag) -> SearchCityViewModelProtocol.Output {
+    static func output(input: SearchCityViewModelProtocol.Input, state: State) -> SearchCityViewModelProtocol.Output {
         
         let searchTextObservable = input.searchText
             .debounce(.microseconds(300))
@@ -56,7 +56,7 @@ private extension SearchCityViewModel {
             .skip(1)
             .asObservable()
         
-        Observable.combineLatest(searchTextObservable, airportsObservable)
+        let sections = Observable.combineLatest(searchTextObservable, airportsObservable)
             .map { (searchKey, airports) in
                 
                 return airports.filter { (airport) -> Bool in
@@ -67,11 +67,15 @@ private extension SearchCityViewModel {
                         .hasPrefix(searchKey.lowercased())
                 }
             }
-            .map { print($0) }
-            .subscribe()
-            .disposed(by: bag)
+            .map { airports in
+                SearchCityViewModel.uniqueelementsFrom(array: airports.compactMap({ airport in
+                    CityViewModel(model: airport)
+                }))
+            }
+            .map({ [CityItemsSection(model: 0, items: $0)] })
+            .asDriver(onErrorJustReturn: [])
         
-        return ()
+        return (cities: sections, ())
     }
     
     func process() -> Void {
@@ -81,5 +85,25 @@ private extension SearchCityViewModel {
             .map({ [state] in state.airports.accept($0) })
             .subscribe()
             .disposed(by: bagDispose)
+    }
+}
+
+private extension SearchCityViewModel {
+    
+    static func uniqueelementsFrom(array: [CityViewModel]) -> [CityViewModel] {
+        
+        var set = Set<CityViewModel>()
+        let result = array.filter {
+            
+            guard !set.contains($0) else {
+                return false
+            }
+            
+            set.insert($0)
+            
+            return true
+        }
+        
+        return result
     }
 }

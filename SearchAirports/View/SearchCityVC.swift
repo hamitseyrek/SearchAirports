@@ -18,13 +18,40 @@ class SearchCityVC: UIViewController, Storyboardable {
     private var viewModel: SearchCityViewModelProtocol!
     var viewModelBuilder: SearchCityViewModelProtocol.ViewModelBuilder!
     
+    private static let CellID = "CityCellID"
+    
+    private lazy var dataSource = RxTableViewSectionedReloadDataSource<CityItemsSection> { ds, tv, ip, item in
+        
+        let cell: CityTableViewCell = tv.dequeueReusableCell(withIdentifier: SearchCityVC.CellID, for: ip) as! CityTableViewCell
+        cell.configure(usingViewModel: item)
+        return cell
+    }
+    
+    private let bag2 = DisposeBag()
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.title = "Airports"
         // Do any additional setup after loading the view.
         viewModel = viewModelBuilder((searchText: searchTextField.rx.text.orEmpty.asDriver(), ()))
+        
+        setupUI()
+        setupBinding()
     }
+}
 
-
+private extension SearchCityVC {
+    
+    func setupUI() -> Void {
+        
+        tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: SearchCityVC.CellID)
+        self.title = "Airports1"
+    }
+    
+    func setupBinding() -> Void {
+        self.viewModel.output.cities.drive(tableView.rx.items(dataSource: self.dataSource))
+            .disposed(by: bag2)
+    }
 }
 
