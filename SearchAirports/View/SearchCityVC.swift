@@ -10,7 +10,7 @@ import RxSwift
 import RxDataSources
 
 class SearchCityVC: UIViewController, Storyboardable {    
-
+    
     @IBOutlet weak var roundedView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -33,11 +33,11 @@ class SearchCityVC: UIViewController, Storyboardable {
         
         super.viewDidLoad()
         self.title = "Airports"
-        // Do any additional setup after loading the view.
+        
         viewModel = viewModelBuilder((
             searchText: searchTextField.rx.text.orEmpty.asDriver(),
             citySelect: tableView.rx.modelSelected(CityViewModel.self).asDriver()
-    ))
+        ))
         
         setupUI()
         setupBinding()
@@ -47,9 +47,7 @@ class SearchCityVC: UIViewController, Storyboardable {
 private extension SearchCityVC {
     
     func setupUI() -> Void {
-        
         tableView.register(UINib(nibName: "CityTableViewCell", bundle: nil), forCellReuseIdentifier: SearchCityVC.CellID)
-        self.title = "Airports1"
     }
     
     func setupBinding() -> Void {

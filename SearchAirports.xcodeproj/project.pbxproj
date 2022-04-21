@@ -28,6 +28,8 @@
 		5E719CCB2811CFCA00FD0BB8 /* AirportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CCA2811CFCA00FD0BB8 /* AirportsVC.swift */; };
 		5E719CCD2811D0D700FD0BB8 /* AirportsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CCC2811D0D700FD0BB8 /* AirportsViewModel.swift */; };
 		5E719CCF2811E11900FD0BB8 /* AirportsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CCE2811E11900FD0BB8 /* AirportsCoordinator.swift */; };
+		5E719CD228120C5E00FD0BB8 /* AirportTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E719CD028120C5E00FD0BB8 /* AirportTableViewCell.swift */; };
+		5E719CD328120C5E00FD0BB8 /* AirportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E719CD128120C5E00FD0BB8 /* AirportTableViewCell.xib */; };
 		5EDF3E4E280CDCA500B35A5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */; };
 		5EDF3E50280CDCA500B35A5B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */; };
 		5EDF3E52280CDCA500B35A5B /* SearchCityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDF3E51280CDCA500B35A5B /* SearchCityVC.swift */; };
@@ -54,6 +56,8 @@
 		5E719CCA2811CFCA00FD0BB8 /* AirportsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsVC.swift; sourceTree = "<group>"; };
 		5E719CCC2811D0D700FD0BB8 /* AirportsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsViewModel.swift; sourceTree = "<group>"; };
 		5E719CCE2811E11900FD0BB8 /* AirportsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportsCoordinator.swift; sourceTree = "<group>"; };
+		5E719CD028120C5E00FD0BB8 /* AirportTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportTableViewCell.swift; sourceTree = "<group>"; };
+		5E719CD128120C5E00FD0BB8 /* AirportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AirportTableViewCell.xib; sourceTree = "<group>"; };
 		5EDF3E4A280CDCA500B35A5B /* SearchAirports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchAirports.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EDF3E4D280CDCA500B35A5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5EDF3E4F280CDCA500B35A5B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 			children = (
 				5E719CC62810CC2700FD0BB8 /* CityTableViewCell.swift */,
 				5E719CC72810CC2700FD0BB8 /* CityTableViewCell.xib */,
+				5E719CD028120C5E00FD0BB8 /* AirportTableViewCell.swift */,
+				5E719CD128120C5E00FD0BB8 /* AirportTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -257,6 +263,7 @@
 				5E719CC92810CC2700FD0BB8 /* CityTableViewCell.xib in Resources */,
 				5EDF3E5A280CDCA700B35A5B /* LaunchScreen.storyboard in Resources */,
 				5EDF3E62280CDD0800B35A5B /* airports.json in Resources */,
+				5E719CD328120C5E00FD0BB8 /* AirportTableViewCell.xib in Resources */,
 				5EDF3E57280CDCA700B35A5B /* Assets.xcassets in Resources */,
 				5EDF3E55280CDCA500B35A5B /* Main.storyboard in Resources */,
 			);
@@ -280,6 +287,7 @@
 				5E719CBE280F73E000FD0BB8 /* AirPort.swift in Sources */,
 				5E719CB0280E196500FD0BB8 /* BaseCoordinator.swift in Sources */,
 				5E719CC2280F883200FD0BB8 /* ApiRouter.swift in Sources */,
+				5E719CD228120C5E00FD0BB8 /* AirportTableViewCell.swift in Sources */,
 				5E719CBB280F71E400FD0BB8 /* ApiService.swift in Sources */,
 				5E719CB5280E24E200FD0BB8 /* AppCoordinator.swift in Sources */,
 				5E719CCD2811D0D700FD0BB8 /* AirportsViewModel.swift in Sources */,

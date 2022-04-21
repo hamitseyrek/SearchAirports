@@ -23,6 +23,7 @@ class AppCoordinator: BaseCoordinator {
         appearance.titleTextAttributes = titleAttribute
         
         navigationController.navigationBar.standardAppearance = appearance
+        navigationController.navigationBar.tintColor = UIColor.white
         navigationController.navigationBar.scrollEdgeAppearance = appearance
         navigationController.navigationBar.isTranslucent = false
 
