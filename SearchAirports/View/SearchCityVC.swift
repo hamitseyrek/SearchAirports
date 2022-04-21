@@ -34,7 +34,10 @@ class SearchCityVC: UIViewController, Storyboardable {
         super.viewDidLoad()
         self.title = "Airports"
         // Do any additional setup after loading the view.
-        viewModel = viewModelBuilder((searchText: searchTextField.rx.text.orEmpty.asDriver(), ()))
+        viewModel = viewModelBuilder((
+            searchText: searchTextField.rx.text.orEmpty.asDriver(),
+            citySelect: tableView.rx.modelSelected(CityViewModel.self).asDriver()
+    ))
         
         setupUI()
         setupBinding()

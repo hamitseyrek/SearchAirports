@@ -11,7 +11,10 @@ import RxSwift
 
 protocol SearchCityViewModelProtocol {
     
-    typealias Input = ( searchText: Driver<String>, () )
+    typealias Input = (
+        searchText: Driver<String>,
+        citySelect: Driver<CityViewModel>
+    )
     
     typealias Output = ( cities: Driver<[CityItemsSection]>, () )
     
@@ -29,8 +32,15 @@ class SearchCityViewModel: SearchCityViewModelProtocol {
     private let airportsService: ApiServiceProtocol
     private let bagDispose = DisposeBag()
     
+    // for CitySearcVC
     typealias State = (airports: BehaviorRelay<Set<Airport>>, ())
     private let state: State = (airports: BehaviorRelay<Set<Airport>>(value: []), ())
+    
+    // for AirportsVC
+    private typealias RoutingAction = (citySelectedRelay: PublishRelay<Set<Airport>>, ())
+    private let routingAction: RoutingAction = (citySelectedRelay: PublishRelay(), ())
+    typealias Routing = (citySelected: Driver<Set<Airport>>, ())
+    lazy var routing: Routing = (citySelected: routingAction.citySelectedRelay.asDriver(onErrorDriveWith: .empty()), ())
     
     init(input: SearchCityViewModelProtocol.Input, airportsService: ApiServiceProtocol) {
         self.input = input
@@ -79,12 +89,24 @@ private extension SearchCityViewModel {
     }
     
     func process() -> Void {
+        
         self.airportsService
             .fetchAirports()
             .map({ Set($0) })
             .map({ [state] in state.airports.accept($0) })
             .subscribe()
             .disposed(by: bagDispose)
+        
+        self.input.citySelect.map({ $0.city })
+        .withLatestFrom(state.airports.asDriver()) { ($0, $1) }
+        .map { (city, airports) in
+            airports.filter({ $0.city == city })
+        }
+        .map({ [routingAction] in
+            routingAction.citySelectedRelay.accept($0)
+        })
+        .drive()
+        .disposed(by: bagDispose)
     }
 }
 
