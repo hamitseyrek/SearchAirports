@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E074956281B5587003FC860 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5E074955281B5587003FC860 /* Alamofire */; };
 		5E4C40E4280CE61700686518 /* SearchCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */; };
 		5E4C40E8280CE6AA00686518 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40E7280CE6AA00686518 /* RxCocoa */; };
 		5E4C40EA280CE6AA00686518 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40E9280CE6AA00686518 /* RxRelay */; };
@@ -77,6 +78,7 @@
 				5E719CB8280F6F8300FD0BB8 /* Alamofire in Frameworks */,
 				5E4C40EC280CE6AA00686518 /* RxSwift in Frameworks */,
 				5E4C40EF280CE6DE00686518 /* RxDataSources in Frameworks */,
+				5E074956281B5587003FC860 /* Alamofire in Frameworks */,
 				5E4C40EA280CE6AA00686518 /* RxRelay in Frameworks */,
 				5E4C40E8280CE6AA00686518 /* RxCocoa in Frameworks */,
 			);
@@ -212,6 +214,7 @@
 				5E4C40EB280CE6AA00686518 /* RxSwift */,
 				5E4C40EE280CE6DE00686518 /* RxDataSources */,
 				5E719CB7280F6F8300FD0BB8 /* Alamofire */,
+				5E074955281B5587003FC860 /* Alamofire */,
 			);
 			productName = SearchAirports;
 			productReference = 5EDF3E4A280CDCA500B35A5B /* SearchAirports.app */;
@@ -539,6 +542,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5E074955281B5587003FC860 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E719CB6280F6F8300FD0BB8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		5E4C40E7280CE6AA00686518 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5E4C40E6280CE6AA00686518 /* XCRemoteSwiftPackageReference "RxSwift" */;

@@ -75,7 +75,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="175" estimatedRowHeight="175" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="32m-hG-bAv">
                                 <rect key="frame" x="0.0" y="44" width="414" height="852"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8gv-yq-hFB"/>
@@ -98,7 +98,7 @@
     </scenes>
     <resources>
         <namedColor name="primaryColor">
-            <color red="0.3286604107315293" green="0.38642680198817903" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.32899999618530273" green="0.38600000739097595" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

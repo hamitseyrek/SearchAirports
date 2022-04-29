@@ -10,13 +10,13 @@ import RxDataSources
 import RxSwift
 import RxCocoa
 
-typealias airportItemsSection = SectionModel<Int, AirportViewModelProtocol>
+typealias AirportItemsSection = SectionModel<Int, AirportViewModelProtocol>
 
 protocol AirportsViewModelProtocol {
     
     typealias Output = (
         title: Driver<String>,
-        airports: Driver<[airportItemsSection]>
+        airports: Driver<[AirportItemsSection]>
     )
     
     typealias Input = ()
@@ -47,9 +47,17 @@ extension AirportsViewModel {
     
     static func output(dependencies: AirportsViewModelProtocol.Dependencies) -> AirportsViewModelProtocol.Output {
         
+        let section = Driver.just(dependencies.models)
+            .map {
+                $0.compactMap( { AirportViewModel(usingModel: $0) } )
+            }
+            .map {
+                [AirportItemsSection(model: 0, items: $0)]
+            }
+        
         return (
             title: Driver.just(dependencies.title),
-            airports: Driver.empty()
+            airports: section
         )
     }
 }

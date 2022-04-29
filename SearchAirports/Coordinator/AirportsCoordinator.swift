@@ -14,13 +14,21 @@ class AirportsCoordinator: BaseCoordinator {
     
     private let bagDisp = DisposeBag()
     
-    init(navigationController: UINavigationController?) {
+    private let models: Set<Airport>
+    
+    init(models: Set<Airport>, navigationController: UINavigationController?) {
         self.navigationController = navigationController
+        self.models = models
     }
     
     override func start() {
         
         let view = AirportsVC.instantiate()
+        
+        view.viewModelBuilder = {
+            AirportsViewModel(input: $0, dependencies: (title: self.models.first?.city ?? "", models: self.models))
+        }
+        
         navigationController?.pushViewController(view, animated: true)
 
     }
