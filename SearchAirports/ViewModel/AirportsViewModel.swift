@@ -23,7 +23,8 @@ protocol AirportsViewModelProtocol {
     
     typealias Dependencies = (
         title: String,
-        models: Set<Airport>
+        models: Set<Airport>,
+        currentLocation: Observable<(lat: Double, lon: Double)?>
     )
     
     typealias ViewModelBuilder = (AirportsViewModelProtocol.Input) -> AirportsViewModelProtocol
@@ -47,54 +48,19 @@ extension AirportsViewModel {
     
     static func output(dependencies: AirportsViewModelProtocol.Dependencies) -> AirportsViewModelProtocol.Output {
         
-        let section = Driver.just(dependencies.models)
-            .map {
-                $0.compactMap( { AirportViewModel(usingModel: $0) } )
+        let section = Observable.just(dependencies.models)
+            .withLatestFrom(dependencies.currentLocation) { ( models: $0, location: $1 )}
+            .map { arg in
+                arg.models.compactMap( { AirportViewModel(usingModel: $0, currentLocation: arg.location ?? (lat: 0, lon: 0)) } )
             }
             .map {
                 [AirportItemsSection(model: 0, items: $0)]
             }
+            .asDriver(onErrorJustReturn: [])
         
         return (
             title: Driver.just(dependencies.title),
             airports: section
         )
-    }
-}
-
-
-
-protocol AirportViewModelProtocol {
-    
-    var name: String { get }
-    var code: String { get }
-    var address: String { get }
-    var distance: Double? { get }
-    var formattedDistance: String { get }
-    var runwayLength: String { get }
-    var location: (lat: String, lon: String) { get }
-}
-
-struct AirportViewModel: AirportViewModelProtocol {
-    
-    var formattedDistance: String {
-        return "\(distance?.rounded(.toNearestOrEven) ?? 0 / 1000) Km"
-    }
-    var name: String
-    var code: String
-    var address: String
-    var distance: Double?
-    var runwayLength: String
-    var location: (lat: String, lon: String)
-    
-    init(usingModel model: Airport) {
-        
-        self.name = model.name
-        self.code = model.code
-        self.address = model.state ?? model.country
-        self.name = model.name
-        self.runwayLength = "Runway Length: \(model.runwayLength ?? "")"
-        self.location = (lat: model.lat, lon: model.lon)
-        self.distance = 0
     }
 }

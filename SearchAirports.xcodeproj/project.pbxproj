@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5E074956281B5587003FC860 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5E074955281B5587003FC860 /* Alamofire */; };
+		5E074958281D746B003FC860 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E074957281D746B003FC860 /* LocationService.swift */; };
+		5E07495A281DEE1D003FC860 /* AirportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E074959281DEE1D003FC860 /* AirportViewModel.swift */; };
 		5E4C40E4280CE61700686518 /* SearchCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */; };
 		5E4C40E8280CE6AA00686518 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40E7280CE6AA00686518 /* RxCocoa */; };
 		5E4C40EA280CE6AA00686518 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40E9280CE6AA00686518 /* RxRelay */; };
@@ -41,6 +43,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E074957281D746B003FC860 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		5E074959281DEE1D003FC860 /* AirportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportViewModel.swift; sourceTree = "<group>"; };
 		5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewModel.swift; sourceTree = "<group>"; };
 		5E719CA8280E13AF00FD0BB8 /* SearchCityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityCoordinator.swift; sourceTree = "<group>"; };
 		5E719CAD280E156C00FD0BB8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */,
+				5E074959281DEE1D003FC860 /* AirportViewModel.swift */,
 				5E719CC32810BD0000FD0BB8 /* CityViewModel.swift */,
 				5E719CCC2811D0D700FD0BB8 /* AirportsViewModel.swift */,
 			);
@@ -133,6 +138,7 @@
 				5E719CBA280F71E400FD0BB8 /* ApiService.swift */,
 				5E719CBF280F863E00FD0BB8 /* NetworkError.swift */,
 				5E719CC1280F883200FD0BB8 /* ApiRouter.swift */,
+				5E074957281D746B003FC860 /* LocationService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			files = (
 				5EDF3E52280CDCA500B35A5B /* SearchCityVC.swift in Sources */,
 				5EDF3E4E280CDCA500B35A5B /* AppDelegate.swift in Sources */,
+				5E074958281D746B003FC860 /* LocationService.swift in Sources */,
 				5E719CAE280E156C00FD0BB8 /* Coordinator.swift in Sources */,
 				5E719CA9280E13AF00FD0BB8 /* SearchCityCoordinator.swift in Sources */,
 				5E719CB3280E1B6400FD0BB8 /* Storyboardable.swift in Sources */,
@@ -292,6 +299,7 @@
 				5E719CC2280F883200FD0BB8 /* ApiRouter.swift in Sources */,
 				5E719CD228120C5E00FD0BB8 /* AirportTableViewCell.swift in Sources */,
 				5E719CBB280F71E400FD0BB8 /* ApiService.swift in Sources */,
+				5E07495A281DEE1D003FC860 /* AirportViewModel.swift in Sources */,
 				5E719CB5280E24E200FD0BB8 /* AppCoordinator.swift in Sources */,
 				5E719CCD2811D0D700FD0BB8 /* AirportsViewModel.swift in Sources */,
 				5E719CC0280F863E00FD0BB8 /* NetworkError.swift in Sources */,
@@ -447,6 +455,8 @@
 				DEVELOPMENT_TEAM = SS2CH8F6CH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SearchAirports/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -474,6 +484,8 @@
 				DEVELOPMENT_TEAM = SS2CH8F6CH;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SearchAirports/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
