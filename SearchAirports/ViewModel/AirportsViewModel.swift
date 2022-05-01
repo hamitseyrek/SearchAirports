@@ -28,7 +28,7 @@ protocol AirportsViewModelProtocol {
     )
     
     typealias ViewModelBuilder = (AirportsViewModelProtocol.Input) -> AirportsViewModelProtocol
-
+    
     var output: AirportsViewModelProtocol.Output { get }
     var input: AirportsViewModelProtocol.Input { get }
 }
@@ -51,7 +51,10 @@ extension AirportsViewModel {
         let section = Observable.just(dependencies.models)
             .withLatestFrom(dependencies.currentLocation) { ( models: $0, location: $1 )}
             .map { arg in
-                arg.models.compactMap( { AirportViewModel(usingModel: $0, currentLocation: arg.location ?? (lat: 0, lon: 0)) } )
+                arg.models.compactMap( {
+                    AirportViewModel(usingModel: $0, currentLocation: arg.location ?? (lat: 0, lon: 0)) } )
+                
+                .sorted()
             }
             .map {
                 [AirportItemsSection(model: 0, items: $0)]

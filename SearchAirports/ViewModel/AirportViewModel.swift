@@ -14,7 +14,7 @@ protocol AirportViewModelProtocol {
     var name: String { get }
     var code: String { get }
     var address: String { get }
-    var distance: Double? { get }
+    var distance: Double { get }
     var formattedDistance: String { get }
     var runwayLength: String { get }
     var location: (lat: String, lon: String) { get }
@@ -23,12 +23,12 @@ protocol AirportViewModelProtocol {
 struct AirportViewModel: AirportViewModelProtocol {
     
     var formattedDistance: String {
-        return "\(distance?.rounded(.toNearestOrEven) ?? 0 / 1000) Km"
+        return "\(distance.rounded(.toNearestOrEven) / 1000) Km"
     }
     var name: String
     var code: String
     var address: String
-    var distance: Double?
+    var distance: Double
     var runwayLength: String
     var location: (lat: String, lon: String)
     
@@ -40,7 +40,7 @@ struct AirportViewModel: AirportViewModelProtocol {
         self.name = model.name
         self.runwayLength = "Runway Length: \(model.runwayLength ?? "")"
         self.location = (lat: model.lat, lon: model.lon)
-        self.distance = AirportViewModel.getDistance(airportLocation: (lat: Double(model.lat), lon: Double(model.lon)), currentLocation: currentLocation)
+        self.distance = AirportViewModel.getDistance(airportLocation: (lat: Double(model.lat), lon: Double(model.lon)), currentLocation: currentLocation) ?? 0.0
     }
 }
 
@@ -56,5 +56,15 @@ private extension AirportViewModel {
          let airport = CLLocation(latitude: airportLat, longitude: airportLon)
         
         return current.distance (from: airport)
+    }
+}
+
+extension AirportViewModel: Comparable {
+    static func < (lhs: AirportViewModel, rhs: AirportViewModel) -> Bool {
+        return lhs.distance <= rhs.distance
+    }
+    
+    static func == (lhs: AirportViewModel, rhs: AirportViewModel) -> Bool {
+        return lhs.code == rhs.code
     }
 }
