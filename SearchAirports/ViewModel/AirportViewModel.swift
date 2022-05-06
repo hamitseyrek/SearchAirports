@@ -23,7 +23,7 @@ protocol AirportViewModelProtocol {
 struct AirportViewModel: AirportViewModelProtocol {
     
     var formattedDistance: String {
-        return "\(distance.rounded(.toNearestOrEven) / 1000) Km"
+        return "\((distance * 1.6 / 1000).rounded(.toNearestOrEven)) Km"
     }
     var name: String
     var code: String

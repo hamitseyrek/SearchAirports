@@ -10,6 +10,9 @@
 		5E074956281B5587003FC860 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5E074955281B5587003FC860 /* Alamofire */; };
 		5E074958281D746B003FC860 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E074957281D746B003FC860 /* LocationService.swift */; };
 		5E07495A281DEE1D003FC860 /* AirportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E074959281DEE1D003FC860 /* AirportViewModel.swift */; };
+		5E07495D28253F86003FC860 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07495C28253F86003FC860 /* Drawable.swift */; };
+		5E07495F282540AF003FC860 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07495E282540AF003FC860 /* RouterProtocol.swift */; };
+		5E07496128254536003FC860 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07496028254536003FC860 /* Router.swift */; };
 		5E4C40E4280CE61700686518 /* SearchCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */; };
 		5E4C40E8280CE6AA00686518 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40E7280CE6AA00686518 /* RxCocoa */; };
 		5E4C40EA280CE6AA00686518 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 5E4C40E9280CE6AA00686518 /* RxRelay */; };
@@ -45,6 +48,9 @@
 /* Begin PBXFileReference section */
 		5E074957281D746B003FC860 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		5E074959281DEE1D003FC860 /* AirportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportViewModel.swift; sourceTree = "<group>"; };
+		5E07495C28253F86003FC860 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		5E07495E282540AF003FC860 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		5E07496028254536003FC860 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		5E4C40E3280CE61700686518 /* SearchCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityViewModel.swift; sourceTree = "<group>"; };
 		5E719CA8280E13AF00FD0BB8 /* SearchCityCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityCoordinator.swift; sourceTree = "<group>"; };
 		5E719CAD280E156C00FD0BB8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -91,6 +97,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E07495B28253F79003FC860 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5E07495C28253F86003FC860 /* Drawable.swift */,
+				5E07496028254536003FC860 /* Router.swift */,
+				5E07495E282540AF003FC860 /* RouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		5E719CAA280E153B00FD0BB8 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +181,7 @@
 		5EDF3E41280CDCA500B35A5B = {
 			isa = PBXGroup;
 			children = (
+				5E07495B28253F79003FC860 /* Router */,
 				5EDF3E61280CDD0800B35A5B /* airports.json */,
 				5EDF3E4C280CDCA500B35A5B /* SearchAirports */,
 				5EDF3E4B280CDCA500B35A5B /* Products */,
@@ -291,6 +308,7 @@
 				5E719CAE280E156C00FD0BB8 /* Coordinator.swift in Sources */,
 				5E719CA9280E13AF00FD0BB8 /* SearchCityCoordinator.swift in Sources */,
 				5E719CB3280E1B6400FD0BB8 /* Storyboardable.swift in Sources */,
+				5E07495F282540AF003FC860 /* RouterProtocol.swift in Sources */,
 				5E719CCB2811CFCA00FD0BB8 /* AirportsVC.swift in Sources */,
 				5E719CCF2811E11900FD0BB8 /* AirportsCoordinator.swift in Sources */,
 				5E719CC42810BD0100FD0BB8 /* CityViewModel.swift in Sources */,
@@ -300,6 +318,8 @@
 				5E719CD228120C5E00FD0BB8 /* AirportTableViewCell.swift in Sources */,
 				5E719CBB280F71E400FD0BB8 /* ApiService.swift in Sources */,
 				5E07495A281DEE1D003FC860 /* AirportViewModel.swift in Sources */,
+				5E07496128254536003FC860 /* Router.swift in Sources */,
+				5E07495D28253F86003FC860 /* Drawable.swift in Sources */,
 				5E719CB5280E24E200FD0BB8 /* AppCoordinator.swift in Sources */,
 				5E719CCD2811D0D700FD0BB8 /* AirportsViewModel.swift in Sources */,
 				5E719CC0280F863E00FD0BB8 /* NetworkError.swift in Sources */,
