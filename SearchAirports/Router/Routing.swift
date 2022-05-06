@@ -9,7 +9,7 @@ import Foundation
 
 typealias NavigationBackClosure = (() -> ())
 
-protocol RouterProtocol {
+protocol Routing {
     func push(_ drawable: Drawable, isAnimated: Bool, onNavigationBack: NavigationBackClosure?)
     func pop(_ isAnimated: Bool)
 }

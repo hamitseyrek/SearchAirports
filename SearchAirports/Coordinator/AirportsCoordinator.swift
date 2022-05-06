@@ -10,14 +10,14 @@ import RxSwift
 
 class AirportsCoordinator: BaseCoordinator {
     
-    private let navigationController: UINavigationController?
+    private let router: Routing?
     
     private let bagDisp = DisposeBag()
     
     private let models: Set<Airport>
     
-    init(models: Set<Airport>, navigationController: UINavigationController?) {
-        self.navigationController = navigationController
+    init(models: Set<Airport>, router: Routing?) {
+        self.router = router
         self.models = models
     }
     
@@ -37,7 +37,7 @@ class AirportsCoordinator: BaseCoordinator {
         }
         
         
-        navigationController?.pushViewController(view, animated: true)
+        router?.push(view, isAnimated: true, onNavigationBack: isCompleted)
         
     }
 }

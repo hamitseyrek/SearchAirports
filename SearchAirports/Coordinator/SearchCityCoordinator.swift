@@ -10,12 +10,12 @@ import RxSwift
 
 class SearchCityCoordinator: BaseCoordinator {
     
-    private let navigationController: UINavigationController?
+    private let router: Routing?
     
     private let bagDis = DisposeBag()
     
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(router: Routing) {
+        self.router = router
     }
     
     override func start() {
@@ -37,7 +37,7 @@ class SearchCityCoordinator: BaseCoordinator {
             return viewModel
         }
         
-        navigationController?.pushViewController(view, animated: true)
+        router?.push(view, isAnimated: true, onNavigationBack: isCompleted)
     }
 }
 
@@ -45,8 +45,14 @@ extension SearchCityCoordinator {
     
     func showAirports(usingModel models: Set<Airport>) -> Void {
         
-        let airportCoordinator = AirportsCoordinator(models: models, navigationController: self.navigationController)
+        let airportCoordinator = AirportsCoordinator(models: models, router: self.router)
         self.add(coordinator: airportCoordinator)
+        
+        airportCoordinator.isCompleted = { [weak self, weak airportCoordinator] in
+            if let coordinator = airportCoordinator {
+                self?.remove(coordinator: coordinator)
+            }
+        }
         
         airportCoordinator.start()
     }
